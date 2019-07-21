@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Loan Prediction System | Home</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<style type="text/css">
+		.login-register-form-wrapper {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding:20px;
+			min-height: 100vh;
+		}
+		.login-register-form {
+			padding: 20px;
+			border: 1px solid #eee;
+		}
+	</style>
+</head>
+<body>
+	<!-- navbar start -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <a class="navbar-brand" href="#">Navbar</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNav">
+	    <ul class="navbar-nav">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">Features</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">Pricing</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link disabled" href="#">Disabled</a>
+	      </li>
+	    </ul>
+	  </div>
+	</nav>
+	<!-- navbar end -->
+
+	<!-- body content start -->
+
+	<div class="container-fluid">
+
+		<!-- register-form start -->
+		<div class="row login-register-form-wrapper">
+			<div class="col-sm-6 login-register-form">
+				
+				<form name="registerForm" method="POST" action="" onsubmit=" return validateRegisterForm()">
+				  
+				  <div class="form-group">
+				    <label for="exampleInputEmail1">Email address</label>
+				    <input required="true" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+				    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+				  </div>
+
+<div class="form-group">
+				    <label for="exampleInputEmail1">Full Name</label>
+				    <input required="true" type="name" class="form-control" aria-describedby="emailHelp" placeholder="Enter your full Name" name="fullname">
+				    
+				  </div>
+
+				  <div class="form-group">
+				    <label for="exampleInputEmail1">Phone Number</label>
+				    <input required="true" type="Number" class="form-control" aria-describedby="emailHelp" placeholder="Enter phone number" name="phone">
+				    <small id="emailHelp" class="form-text text-muted">We'll never share your number with anyone else.</small>
+				  </div>
+
+
+				  <div class="form-group">
+				    <label for="exampleInputEmail1">Password</label>
+				    <input required="true" type="password" class="form-control" id="password" aria-describedby="emailHelp" placeholder="Enter password" name="password"> 
+				  </div>
+
+
+
+				  <div class="form-group">
+				    <label for="exampleInputPassword1">Confirm Password</label>
+				    <input required="true" type="password" class="form-control" id="confirmpassowrd" placeholder="Password" name="confirmpassword">
+				  </div>
+
+				  <button class="btn btn-secondary" type="submit">Create New Account</a>
+
+				</form>
+			</div>		
+		</div>
+		<!-- register-form-end -->
+
+	</div>
+
+	<!-- body content end -->
+
+
+
+	<!-- validation- script-start -->
+	<script defer type="text/javascript">
+		function validateRegisterForm(){
+			let pass = document.registerForm.password.value;
+			let cnfrmpass = document.registerForm.confirmpassword.value;
+			
+			if( pass !== cnfrmpass ){
+				alert("Password Doesnt Match");
+				return false;			
+			}
+
+			if(pass.length<4){
+				alert("Password length must be greater than 4");
+				return false;
+			}
+
+
+			return true;
+		}
+	</script>
+	<!-- validation-script-end -->
+</body>
+</html>

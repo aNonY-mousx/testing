@@ -7,6 +7,19 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+	<style type="text/css">
+		.login-register-form-wrapper {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding:20px;
+			min-height: 100vh;
+		}
+		.login-register-form {
+			padding: 20px;
+			border: 1px solid #eee;
+		}
+	</style>
 </head>
 <body>
 	<!-- navbar start -->
@@ -38,20 +51,32 @@
 
 	<div class="container-fluid">
 
-		<!-- page hero/header start -->
-		<div class="jumbotron jumbotron-fluid">
-		  <div class="container">
-		    <h1 class="display">Loan Prediction System</h1>
-		    <p class="lead">Welcome to our loan prediction system</p>
-		  </div>
+		<!-- login-form start -->
+		<div class="row login-register-form-wrapper">
+			<div class="col-sm-6 login-register-form">
+				<div class="error-message">
+					<p class="text text-danger">
+						{{ error if(error) else '' }}
+					</p>
+				</div>
+				<form method="POST" action="/login">
+				  <div class="form-group">
+				    <label for="exampleInputEmail1">Email address</label>
+				    <input required="true" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+				    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleInputPassword1">Password</label>
+				    <input required="true" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+				  </div>
+
+				  <button type="submit" class="btn btn-primary">Login</button>
+				  <a class="btn btn-secondary" href="/register">Create New Account</a>
+				</form>
+
+			</div>		
 		</div>
-		<!-- page hero/header end -->
-		<div class="row" style="display:flex;justify-content: center">
-			<div class="width: 70%">
-				<a class="btn btn-success" href="/login">Login</a>
-				<a class="btn btn-danger" href="/register">Register</a>
-			</div>			
-		</div>
+		<!-- login-form-end -->
 
 	</div>
 

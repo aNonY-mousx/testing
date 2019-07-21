@@ -1,0 +1,8 @@
+CREATE TABLE users (
+    sno int AUTO_INCREMENT PRIMARY KEY,
+    account_number varchar(200) UNIQUE,
+   	fullname varchar(200),
+    email varchar(200),
+    password varchar(1024),
+    phone varchar(15) UNIQUE
+);
